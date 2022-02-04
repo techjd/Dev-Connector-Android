@@ -4,8 +4,11 @@ import com.techjd.devconnector.data.models.LoginSignUp.loginResponse
 import com.techjd.devconnector.data.models.LoginSignUp.loginUserDetails
 import com.techjd.devconnector.data.models.LoginSignUp.registerResponse
 import com.techjd.devconnector.data.models.LoginSignUp.registerUserDetails
+import com.techjd.devconnector.data.models.UserPosts.Posts
 import retrofit2.Response
 import retrofit2.http.Body
+import retrofit2.http.GET
+import retrofit2.http.Header
 import retrofit2.http.POST
 
 interface devConnectorAPI {
@@ -20,7 +23,10 @@ interface devConnectorAPI {
         @Body registerUserDetails: registerUserDetails
     ): Response<registerResponse>
 
-    suspend fun getPosts()
+    @GET("posts")
+    suspend fun getPosts(
+        @Header("x-auth-token") token: String
+    ): Response<Posts>
 
 
 }

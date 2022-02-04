@@ -12,5 +12,42 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="toolbarStyle">@style/Widget.App.Toolbar</item>
+        <item name="bottomNavigationStyle">@style/Widget.App.BottomNavigationView</item>
+        <item name="textAppearanceBodyLarge">@style/TextAppearance.App.TitleLarge</item>
+    </style>
+
+    <style name="Widget.App.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="titleTextAppearance">@style/TextAppearance.App.TitleLarge</item>
+    </style>
+
+    <style name="TextAppearance.App.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
+        <item name="fontFamily">@font/montserrat_extrabold</item>
+<!--        <item name="android:fontFamily">@font/montserrat_bold</item>-->
+        <item name="android:textSize">20dp</item>
+
+    </style>
+
+    <style name="Widget.App.BottomNavigationView" parent="Widget.Material3.BottomNavigationView">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.BottomNavigationView</item>
+        <item name="itemActiveIndicatorStyle">@style/ActiveIndication</item>
+    </style>
+
+    <style name="ThemeOverlay.App.BottomNavigationView" parent="">
+        <item name="fontFamily">@font/montserrat_semibold</item>
+        <item name="itemActiveIndicatorStyle">@style/ActiveIndication</item>
+<!--        <item name="background">@color/my_personal</item>-->
+<!--        <item name="colorOnSurfaceVariant">@color/shrine_blue_900</item>-->
+<!--        <item name="background">@color/my_personal</item>-->
+<!--        <item name="backgroundTint">@color/my_personal</item>-->
+<!--        <item name="colorSurface">#E8F1F5</item>-->
+<!--        <item name="colorSurface">#E8F1F5</item>-->
+<!--        <item name="android:fontFamily">@font/montserrat_medium</item>-->
+    </style>
+
+    <style name="ActiveIndication" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="itemActiveIndicatorStyle">@color/black</item>
+
+<!--        <item name="color">@color/my_personal</item>-->
     </style>
 </resources>

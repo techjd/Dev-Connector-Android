@@ -7,7 +7,7 @@ object DevConnectorService {
 
     private val retrofit: Retrofit = Retrofit.Builder()
         .addConverterFactory(GsonConverterFactory.create())
-        .baseUrl("http://192.168.2.7:5000/api/")
+        .baseUrl("http://172.20.10.2:5000/api/")
         .build()
 
     val devConnectorInstance: devConnectorAPI =

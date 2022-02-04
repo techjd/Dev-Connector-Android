@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/drawable/background_gradeint.xml" value="0.24114583333333334" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/drawable/dash.xml" value="0.1775" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/drawable/edittext_background.xml" value="0.24114583333333334" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/drawable/ic_add_post.xml" value="0.23646578140960164" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/drawable/ic_back.xml" value="0.23646578140960164" />
@@ -41,6 +42,7 @@
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/fragment_sign_up.xml" value="0.22083333333333333" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/fragment_splash.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/homefragmenttoolbar.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/layout_post.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/messagingtoolbar.xml" value="0.13949275362318841" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/profiletoolbar.xml" value="0.10696266397578204" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/search.xml" value="0.264" />
