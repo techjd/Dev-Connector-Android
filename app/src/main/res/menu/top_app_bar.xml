@@ -1,0 +1,26 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/search"
+        android:icon="@drawable/ic_search"
+        android:title="Search"
+        android:contentDescription="Search"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/post"
+        android:title="Add Post"
+        android:icon="@drawable/ic_add_post"
+        android:contentDescription="Messages"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/messages"
+        android:title="Messages"
+        android:icon="@drawable/ic_message"
+        android:contentDescription="Messages"
+        app:showAsAction="ifRoom" />
+
+</menu>

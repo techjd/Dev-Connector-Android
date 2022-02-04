@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Dev Connector</string>
+    <string name="title">Title of Content</string>
+    <string name="subtitle">Subtitle of Content</string>
+    <string name="clickMe">Click Me</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dev_connector"><![CDATA[</> Dev Connector]]></string>
+</resources>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main"
+    app:startDestination="@id/splashFragment">
+    <fragment
+        android:id="@+id/selectLogInSignUpFragment"
+        android:name="com.techjd.devconnector.fragments.SelectLogInSignUpFragment"
+        android:label="fragment_select_log_in_sign_up"
+        tools:layout="@layout/fragment_select_log_in_sign_up" >
+        <action
+            app:popUpTo="@id/selectLogInSignUpFragment"
+            app:popUpToInclusive="true"
+            android:id="@+id/action_selectLogInSignUpFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_selectLogInSignUpFragment_to_addNameFragment"
+            app:destination="@id/addNameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.techjd.devconnector.fragments.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            app:popUpTo="@id/signInFragment"
+            app:popUpToInclusive="true"
+            android:id="@+id/action_signInFragment_to_addNameFragment"
+            app:destination="@id/addNameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNameFragment"
+        android:name="com.techjd.devconnector.fragments.AddNameFragment"
+        android:label="fragment_add_name"
+        tools:layout="@layout/fragment_add_name" >
+        <action
+            android:id="@+id/action_addNameFragment_to_addEmailFragment"
+            app:destination="@id/addEmailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addEmailFragment"
+        android:name="com.techjd.devconnector.fragments.AddEmailFragment"
+        android:label="fragment_add_email"
+        tools:layout="@layout/fragment_add_email" >
+        <action
+            android:id="@+id/action_addEmailFragment_to_setPasswordFragment"
+            app:destination="@id/setPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/setPasswordFragment"
+        android:name="com.techjd.devconnector.fragments.SetPasswordFragment"
+        android:label="fragment_set_password"
+        tools:layout="@layout/fragment_set_password" >
+        <action
+            app:popUpTo="@id/addEmailFragment"
+            app:popUpToInclusive="true"
+            android:id="@+id/action_setPasswordFragment_to_addEmailFragment"
+            app:destination="@id/addEmailFragment" />
+        <action
+            android:id="@+id/action_setPasswordFragment_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.techjd.devconnector.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.techjd.devconnector.fragments.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true"
+            android:id="@+id/action_splashFragment_to_selectLogInSignUpFragment2"
+            app:destination="@id/selectLogInSignUpFragment" />
+        <action
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true"
+            android:id="@+id/action_splashFragment_to_mainActivity3"
+            app:destination="@id/mainActivity" />
+    </fragment>
+</navigation>
