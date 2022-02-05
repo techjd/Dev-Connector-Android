@@ -15,7 +15,7 @@
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/drawable/tab_colour.xml" value="0.23646578140960164" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout-land/activity_main.xml" value="0.18563922942206654" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/activity_add_new_post.xml" value="0.176" />
-        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/activity_add_post.xml" value="0.11322463768115942" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/activity_add_post.xml" value="0.16799999999999998" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/activity_login.xml" value="0.22083333333333333" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/activity_messaging.xml" value="0.13949275362318841" />
@@ -48,7 +48,7 @@
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/search.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/searchtoolbar.xml" value="0.11865942028985507" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/top_app_bar.xml" value="0.22083333333333333" />
-        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/top_mat_app_bar.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/top_mat_app_bar.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/menu/add_post_nav.xml" value="0.22083333333333333" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/menu/bottom_nav_menu.xml" value="0.22083333333333333" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/menu/message_nav.xml" value="0.22083333333333333" />

@@ -1,5 +1,6 @@
 package com.techjd.devconnector
 
+import android.text.Html
 import android.text.Layout
 import android.view.LayoutInflater
 import android.view.View
@@ -34,7 +35,8 @@ class PostsAdapter(val posts: Posts) :
     override fun onBindViewHolder(holder: PostsViewHolder, position: Int) {
         val singlePost = posts[position]
         holder.name.text = singlePost.name
-        holder.postContent.text = singlePost.text.toString()
+        holder.postContent.text = Html.fromHtml(singlePost.text)
+
         holder.numberOfLikes.text = singlePost.likes.size.toString()
         holder.numberOfComments.text = "${singlePost.comments.size.toString()} Comments"
     }
