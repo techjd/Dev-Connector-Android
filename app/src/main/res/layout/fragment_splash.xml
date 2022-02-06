@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
 
     android:background="@drawable/edittext_background"
-    tools:context=".fragments.SplashFragment">
+    tools:context=".fragments.OnBoarding.SplashFragment">
 
     <ImageView
         android:id="@+id/imageView"

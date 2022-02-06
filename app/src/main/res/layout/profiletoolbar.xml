@@ -8,6 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:navigationIcon="@drawable/ic_back"
+        app:menu="@menu/top_toolbar_menu"
         app:title="Your Profile" />
 
 </com.google.android.material.appbar.AppBarLayout>

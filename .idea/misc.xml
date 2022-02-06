@@ -20,7 +20,7 @@
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/activity_messaging.xml" value="0.13949275362318841" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/activity_on_boarding.xml" value="0.19814814814814816" />
-        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/activity_profile.xml" value="0.10696266397578204" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/activity_profile.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/activity_search.xml" value="0.11865942028985507" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/activity_select_role.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/activity_sign_up.xml" value="0.2" />
@@ -54,6 +54,7 @@
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/menu/message_nav.xml" value="0.22083333333333333" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/menu/onboarding_top_app_bar_menu.xml" value="0.22083333333333333" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/menu/top_app_bar.xml" value="0.22083333333333333" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/menu/top_toolbar_menu.xml" value="0.13333333333333333" />
       </map>
     </option>
   </component>

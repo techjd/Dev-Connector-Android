@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
 
     android:background="@drawable/edittext_background"
-    tools:context=".fragments.SelectLogInSignUpFragment">
+    tools:context=".fragments.OnBoarding.SelectLogInSignUpFragment">
 
     <ImageView
         android:id="@+id/imageView"

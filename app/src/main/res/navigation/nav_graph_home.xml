@@ -7,22 +7,22 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.techjd.devconnector.HomeFragment"
+        android:name="com.techjd.devconnector.fragments.HomeScreen.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/jobsFragment"
-        android:name="com.techjd.devconnector.JobsFragment"
+        android:name="com.techjd.devconnector.fragments.HomeScreen.JobsFragment"
         android:label="fragment_jobs"
         tools:layout="@layout/fragment_jobs" />
     <fragment
         android:id="@+id/connectionsFragment"
-        android:name="com.techjd.devconnector.ConnectionsFragment"
+        android:name="com.techjd.devconnector.fragments.HomeScreen.ConnectionsFragment"
         android:label="fragment_connections"
         tools:layout="@layout/fragment_connections" />
     <fragment
         android:id="@+id/notificationsFragment"
-        android:name="com.techjd.devconnector.NotificationsFragment"
+        android:name="com.techjd.devconnector.fragments.HomeScreen.NotificationsFragment"
         android:label="fragment_notifications"
         tools:layout="@layout/fragment_notifications" />
 </navigation>

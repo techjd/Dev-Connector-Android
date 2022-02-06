@@ -4,6 +4,7 @@ import com.techjd.devconnector.data.models.LoginSignUp.loginResponse
 import com.techjd.devconnector.data.models.LoginSignUp.loginUserDetails
 import com.techjd.devconnector.data.models.LoginSignUp.registerResponse
 import com.techjd.devconnector.data.models.LoginSignUp.registerUserDetails
+import com.techjd.devconnector.data.models.UserInfo.UserInfo
 import com.techjd.devconnector.data.models.UserPosts.NewPostResponse.NewPost
 import com.techjd.devconnector.data.models.UserPosts.NewPostResponse.PostResponse
 import com.techjd.devconnector.data.models.UserPosts.Posts
@@ -36,5 +37,9 @@ interface devConnectorAPI {
         @Body newPost: NewPost
     ): Response<PostResponse>
 
+    @GET("profile/me")
+    suspend fun getMyInfo(
+        @Header("x-auth-token") token: String
+    ): Response<UserInfo>
 
 }

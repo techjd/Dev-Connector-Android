@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/edittext_background"
-    tools:context=".fragments.AddNameFragment">
+    tools:context=".fragments.OnBoarding.AddNameFragment">
 
     <include layout="@layout/appbar_signup_login" />
 

@@ -1,4 +1,4 @@
-package com.techjd.devconnector.fragments
+package com.techjd.devconnector.fragments.OnBoarding
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

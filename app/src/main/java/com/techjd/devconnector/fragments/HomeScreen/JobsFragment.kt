@@ -1,11 +1,11 @@
-package com.techjd.devconnector
+package com.techjd.devconnector.fragments.HomeScreen
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
+import com.techjd.devconnector.R
 
 
 class JobsFragment : Fragment() {
