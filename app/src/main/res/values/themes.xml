@@ -30,7 +30,10 @@
         <item name="android:textSize">20dp</item>
 
     </style>
-
+    <style name="FAB" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="fontFamily">@font/montserrat_extrabold</item>
+        <item name="android:backgroundTint">@color/my_personal</item>
+    </style>
     <style name="Widget.App.BottomNavigationView" parent="Widget.Material3.BottomNavigationView">
         <item name="materialThemeOverlay">@style/ThemeOverlay.App.BottomNavigationView</item>
         <item name="itemActiveIndicatorStyle">@style/ActiveIndication</item>

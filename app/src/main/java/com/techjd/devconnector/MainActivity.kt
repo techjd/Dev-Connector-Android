@@ -1,35 +1,41 @@
 package com.techjd.devconnector
 
 import android.content.Intent
-import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
-import androidx.core.content.res.ResourcesCompat
-import androidx.fragment.app.Fragment
+import androidx.activity.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.navigation.NavigationBarView
+import com.techjd.devconnector.Utils.DataStore
+import com.techjd.devconnector.Utils.dataStore
+import com.techjd.devconnector.activities.MessagingActivity
+import com.techjd.devconnector.viewmodels.ChatViewModel
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
     lateinit var bottomNav: BottomNavigationView
     lateinit var topAppBar: MaterialToolbar
     lateinit var navHostFragment: NavHostFragment
     lateinit var navController: NavController
+    lateinit var mydataStore: DataStore
     private val TAG = "MAIN ACTIVITY"
+    val chatViewModel: ChatViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Log.d("Main Activity", "onCreate: Created")
 
+        mydataStore = DataStore(this)
         bottomNav = findViewById(R.id.bottom_navigation)
         topAppBar = findViewById(R.id.topAppBar)
-        navHostFragment = supportFragmentManager.findFragmentById(R.id.main_nav_host_fragment) as NavHostFragment
+        navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.main_nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
 
 
@@ -128,5 +134,13 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         Log.d(TAG, "onResume: Resumed")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG, "onDestroy: Destroyed")
+        lifecycleScope.launch {
+            chatViewModel.removeMeOnline(mydataStore.getToken().first()!!)
+        }
     }
 }

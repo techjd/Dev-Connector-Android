@@ -26,6 +26,7 @@ class PostsViewModel : ViewModel() {
             if (response.isSuccessful) {
                 _posts.value = Resource.Success(data = response.body()!!)
             } else {
+                Log.d("ERROR", "getPosts: ${response.message()}")
                 _posts.value = Resource.Error(message = "Some Error Occurred")
             }
         }

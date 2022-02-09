@@ -18,7 +18,7 @@
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/activity_add_post.xml" value="0.16799999999999998" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/activity_login.xml" value="0.22083333333333333" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/activity_messaging.xml" value="0.13949275362318841" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/activity_messaging.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/activity_on_boarding.xml" value="0.19814814814814816" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/activity_profile.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/activity_search.xml" value="0.11865942028985507" />
@@ -42,7 +42,8 @@
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/fragment_sign_up.xml" value="0.22083333333333333" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/fragment_splash.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/homefragmenttoolbar.xml" value="0.2" />
-        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/layout_post.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/layout_conversations.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/layout_post.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/messagingtoolbar.xml" value="0.13949275362318841" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/profiletoolbar.xml" value="0.10696266397578204" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/search.xml" value="0.264" />

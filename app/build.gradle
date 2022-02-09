@@ -69,4 +69,7 @@ dependencies {
     // TextEditor
     implementation 'jp.wasabeef:richeditor-android:2.0.0'
 
+    // Socket Io
+    implementation 'io.socket:socket.io-client:2.0.0'
+
 }

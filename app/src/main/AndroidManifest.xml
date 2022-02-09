@@ -32,7 +32,7 @@
             android:name=".AddPostActivity"
             android:exported="true" />
         <activity
-            android:name=".MessagingActivity"
+            android:name=".activities.MessagingActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
