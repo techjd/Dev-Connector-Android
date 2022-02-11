@@ -1,5 +1,6 @@
 package com.techjd.devconnector.viewmodels
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -22,6 +23,7 @@ class SignInViewModel(
             if (response.isSuccessful) {
                 _response.value = Resource.Success(data = response.body()!!)
             } else {
+                Log.d("SIGN IN VIEW MODEL", "loginUser: ${response.message()}")
                 _response.value = Resource.Error(message = "Some Error Occurred")
             }
         }
