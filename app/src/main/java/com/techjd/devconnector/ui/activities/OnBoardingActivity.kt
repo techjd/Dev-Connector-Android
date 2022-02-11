@@ -1,4 +1,4 @@
-package com.techjd.devconnector.activities
+package com.techjd.devconnector.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

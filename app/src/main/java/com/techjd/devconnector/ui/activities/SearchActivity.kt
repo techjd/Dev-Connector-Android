@@ -1,9 +1,9 @@
-package com.techjd.devconnector
+package com.techjd.devconnector.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageView
 import com.google.android.material.appbar.MaterialToolbar
+import com.techjd.devconnector.R
 
 class SearchActivity : AppCompatActivity() {
     lateinit var topSearchBar: MaterialToolbar

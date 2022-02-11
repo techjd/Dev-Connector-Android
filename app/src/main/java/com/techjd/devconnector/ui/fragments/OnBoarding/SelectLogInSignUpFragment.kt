@@ -1,4 +1,4 @@
-package com.techjd.devconnector.fragments.OnBoarding
+package com.techjd.devconnector.ui.fragments.OnBoarding
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,12 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.TextView
 import androidx.navigation.findNavController
 import com.google.android.material.textview.MaterialTextView
 import com.techjd.devconnector.R
-import com.techjd.devconnector.activities.OnBoardingActivity
-import kotlin.math.sign
 
 
 class SelectLogInSignUpFragment : Fragment() {

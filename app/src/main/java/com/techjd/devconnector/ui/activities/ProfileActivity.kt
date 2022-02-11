@@ -1,18 +1,17 @@
-package com.techjd.devconnector
+package com.techjd.devconnector.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.appbar.MaterialToolbar
+import com.techjd.devconnector.R
 import com.techjd.devconnector.Utils.DataStore
 import com.techjd.devconnector.Utils.Status
-import com.techjd.devconnector.data.models.UserPosts.NewPostResponse.NewPost
 import com.techjd.devconnector.viewmodels.ProfileViewModel
 import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.coroutines.flow.first

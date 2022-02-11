@@ -1,4 +1,4 @@
-package com.techjd.devconnector.fragments.HomeScreen
+package com.techjd.devconnector.ui.fragments.HomeScreen
 
 import android.os.Bundle
 import android.util.Log
@@ -9,10 +9,12 @@ import android.widget.ProgressBar
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.appbar.MaterialToolbar
-import com.techjd.devconnector.PostsAdapter
+import com.techjd.devconnector.ui.activities.MainActivity
+import com.techjd.devconnector.ui.fragments.PostsAdapter
 import com.techjd.devconnector.R
 import com.techjd.devconnector.Utils.DataStore
 import com.techjd.devconnector.Utils.Status
@@ -20,6 +22,7 @@ import com.techjd.devconnector.api.DevConnectorChat
 import com.techjd.devconnector.data.models.chat.online.MakeOnlineBody
 import com.techjd.devconnector.viewmodels.ChatViewModel
 import com.techjd.devconnector.viewmodels.PostsViewModel
+import com.techjd.devconnector.viewmodels.ProfileViewModel
 import io.socket.client.Socket
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
@@ -34,6 +37,7 @@ class HomeFragment : Fragment() {
     lateinit var mSocket: Socket
     val postsViewModel: PostsViewModel by viewModels()
     val chatViewModel: ChatViewModel by viewModels()
+    val profileViewModel: ProfileViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -70,6 +74,7 @@ class HomeFragment : Fragment() {
             )
         }
 
+
         Log.d("SOCKET ID", "${mSocket.id()} Hello")
 
         postsRecyclerView = view.findViewById(R.id.postsRecyclerView)
@@ -83,7 +88,19 @@ class HomeFragment : Fragment() {
         postsViewModel.postLiveData.observe(viewLifecycleOwner) { response ->
             when (response.status) {
                 Status.SUCCESS -> {
-                    postsRecyclerView.adapter = PostsAdapter(response.data!!)
+                    postsRecyclerView.adapter = PostsAdapter(
+                        response.data!!,
+                        onClickListener = { view, postId ->
+                            val action =
+                                HomeFragmentDirections.actionHomeFragmentToFragmentDetailPost(postId)
+                            findNavController().navigate(action)
+                            (activity as MainActivity).apply {
+                                topAppBar.visibility = View.GONE
+                                bottomNav.visibility = View.GONE
+                            }
+                        }
+                    )
+
                     progressBar.visibility = View.GONE
                 }
                 Status.LOADING -> {

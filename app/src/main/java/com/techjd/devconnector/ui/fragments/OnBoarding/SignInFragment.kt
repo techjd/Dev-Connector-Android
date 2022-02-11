@@ -1,4 +1,4 @@
-package com.techjd.devconnector.fragments.OnBoarding
+package com.techjd.devconnector.ui.fragments.OnBoarding
 
 import android.content.Intent
 import android.os.Bundle
@@ -15,11 +15,11 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
-import com.techjd.devconnector.MainActivity
+import com.techjd.devconnector.ui.activities.MainActivity
 import com.techjd.devconnector.R
 import com.techjd.devconnector.Utils.DataStore
 import com.techjd.devconnector.Utils.Status
-import com.techjd.devconnector.activities.OnBoardingActivity
+import com.techjd.devconnector.ui.activities.OnBoardingActivity
 import com.techjd.devconnector.viewmodels.SignInViewModel
 import kotlinx.coroutines.launch
 
@@ -76,6 +76,7 @@ class SignInFragment : Fragment() {
                     Log.d(TAG, "Success: ${response.data}")
                     lifecycleScope.launch {
                         mydataStore.saveToken(response.data!!.token)
+                        mydataStore.saveUserId(response.data.user._id)
                     }
                     progressBar.visibility = View.GONE
                     Intent(context,  MainActivity::class.java).apply {

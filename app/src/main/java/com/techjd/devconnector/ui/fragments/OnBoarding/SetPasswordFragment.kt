@@ -1,4 +1,4 @@
-package com.techjd.devconnector.fragments.OnBoarding
+package com.techjd.devconnector.ui.fragments.OnBoarding
 
 import android.os.Bundle
 import android.util.Log
@@ -19,7 +19,7 @@ import com.techjd.devconnector.R
 import com.techjd.devconnector.Utils.DataStore
 import com.techjd.devconnector.Utils.Status
 import com.techjd.devconnector.viewmodels.SignUpViewModel
-import com.techjd.devconnector.activities.OnBoardingActivity
+import com.techjd.devconnector.ui.activities.OnBoardingActivity
 import kotlinx.coroutines.launch
 
 class SetPasswordFragment : Fragment() {
@@ -72,9 +72,9 @@ class SetPasswordFragment : Fragment() {
                     ).show()
                     progressBar.visibility = View.GONE
                     lifecycleScope.launch {
-                        mydataStore.saveToken(
-                            response.data!!.token
-                        )
+                        mydataStore.saveToken(response.data!!.token)
+                        mydataStore.saveUserId(response.data.user._id)
+
                     }
                     findNavController().navigate(R.id.action_setPasswordFragment_to_mainActivity)
                     (activity as OnBoardingActivity).finish()

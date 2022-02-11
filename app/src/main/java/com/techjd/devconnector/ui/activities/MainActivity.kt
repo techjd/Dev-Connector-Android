@@ -1,20 +1,22 @@
-package com.techjd.devconnector
+package com.techjd.devconnector.ui.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.activity.viewModels
-import androidx.lifecycle.lifecycleScope
+import androidx.appcompat.app.AlertDialog
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.techjd.devconnector.R
 import com.techjd.devconnector.Utils.DataStore
-import com.techjd.devconnector.Utils.dataStore
-import com.techjd.devconnector.activities.MessagingActivity
+import com.techjd.devconnector.ui.ModalBottomSheet
 import com.techjd.devconnector.viewmodels.ChatViewModel
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
@@ -54,10 +56,13 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.post -> {
-                    val navigate = Intent(this, AddPostActivity::class.java)
-                    startActivity(navigate)
-                    overridePendingTransition(R.anim.slide_up, R.anim.no_animation)
+                    val bottomSheet = ModalBottomSheet()
+                    bottomSheet.show(supportFragmentManager, ModalBottomSheet.TAG)
                     true
+//                    val navigate = Intent(this, AddPostActivity::class.java)
+//                    startActivity(navigate)
+//                    overridePendingTransition(R.anim.slide_up, R.anim.no_animation)
+//                    true
                 }
                 R.id.messages -> {
                     navigateToMessagingActivity()
@@ -139,8 +144,37 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         Log.d(TAG, "onDestroy: Destroyed")
-        lifecycleScope.launch {
-            chatViewModel.removeMeOnline(mydataStore.getToken().first()!!)
+    }
+
+    override fun onBackPressed() {
+        if (navController.currentDestination?.id == R.id.homeFragment) {
+            val builder = AlertDialog.Builder(this)
+            builder.setMessage("Are You Sure You Want To Exit ? ")
+                .setPositiveButton(
+                    "Yes"
+                ) { dialog, id ->
+                    super.onBackPressed()
+                    GlobalScope.launch {
+                        chatViewModel.removeMeOnline(mydataStore.getToken().first()!!)
+                    }
+                    finish()
+                }
+                .setNegativeButton(
+                    "No"
+                ) { dialog, id ->
+                    dialog.dismiss()
+                }
+            builder.setCancelable(false)
+            builder.create()
+            builder.show()
+        } else {
+            if (navController.currentDestination?.id == R.id.fragment_detail_post) {
+                navController.popBackStack()
+                topAppBar.visibility = View.VISIBLE
+                bottomNav.visibility = View.VISIBLE
+            } else {
+                super.onBackPressed()
+            }
         }
     }
 }
