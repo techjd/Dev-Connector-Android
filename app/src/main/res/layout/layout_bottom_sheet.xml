@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/newJob"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?selectableItemBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageView
+
+            android:id="@+id/workImg"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:srcCompat="@drawable/ic_work" />
+
+        <TextView
+            android:id="@+id/workTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Post A New Opportunity"
+            android:textSize="20dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/newLifeUpdate"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?selectableItemBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageView
+
+            android:id="@+id/postImg"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:srcCompat="@drawable/ic_add_post" />
+
+        <TextView
+            android:id="@+id/postTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Post A New Life Update"
+            android:textSize="20dp" />
+    </LinearLayout>
+</LinearLayout>
