@@ -29,4 +29,17 @@ class DataStore(
             preferences[stringPreferencesKey("token")]
         }
     }
+
+    suspend fun saveUserId(userId: String) {
+        val key = stringPreferencesKey("userId")
+        applicationContext.dataStore.edit { preferences ->
+            preferences[key] = userId
+        }
+    }
+
+    fun getUserId(): Flow<String?> {
+        return applicationContext.dataStore.data.map { preferences ->
+            preferences[stringPreferencesKey("userId")]
+        }
+    }
 }
