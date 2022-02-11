@@ -7,6 +7,7 @@ import com.techjd.devconnector.data.models.chat.messages.UserId
 import com.techjd.devconnector.data.models.chat.online.MakeOnlineBody
 import com.techjd.devconnector.data.models.chat.online.Msg
 import com.techjd.devconnector.data.models.chat.onlineusers.OnlineUsers
+import com.techjd.devconnector.data.models.chat.sendMessages.SendMessageBody
 import retrofit2.Response
 
 object ChatRepository {
@@ -25,4 +26,7 @@ object ChatRepository {
 
     suspend fun getAllMessages(token: String, userId: UserId): Response<Messages> =
         DevConnectorService.devConnectorInstance.getAllMessages(token, userId)
+
+    suspend fun sendMessage(token: String, sendMessageBody: SendMessageBody) =
+        DevConnectorService.devConnectorInstance.sendMessage(token, sendMessageBody)
 }

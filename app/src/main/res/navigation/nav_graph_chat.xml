@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_chat"
+    app:startDestination="@id/conversationsFragment">
+
+    <fragment
+        android:id="@+id/conversationsFragment"
+        android:name="com.techjd.devconnector.ui.fragments.Chat.ConversationsFragment"
+        android:label="fragment_conversations"
+        tools:layout="@layout/fragment_conversations" >
+        <action
+            android:id="@+id/action_conversationsFragment_to_onlineUsersFragment"
+            app:destination="@id/onlineUsersFragment" />
+        <action
+            android:id="@+id/action_conversationsFragment_to_messageFragment"
+            app:destination="@id/messageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onlineUsersFragment"
+        android:name="com.techjd.devconnector.ui.fragments.Chat.OnlineUsersFragment"
+        android:label="fragment_online_users"
+        tools:layout="@layout/fragment_online_users" />
+    <fragment
+        android:id="@+id/messageFragment"
+        android:name="com.techjd.devconnector.ui.fragments.Chat.MessageFragment"
+        android:label="fragment_message"
+        tools:layout="@layout/fragment_message" >
+        <argument
+            android:name="to"
+            app:argType="string" />
+    </fragment>
+</navigation>

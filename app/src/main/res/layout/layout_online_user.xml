@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:id="@+id/cardView"
     android:layout_marginTop="10dp"
     >
 
@@ -27,7 +26,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/convoUserName"
+                android:id="@+id/onlineUserName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat_semibold"
@@ -36,11 +35,12 @@
                 android:textSize="23dp" />
 
             <TextView
-                android:id="@+id/userLastMessage"
+                android:id="@+id/userBio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat_medium"
                 android:maxLines="1"
+                android:visibility="invisible"
                 android:text="Hey What's Up"
                 android:textSize="15dp" />
         </LinearLayout>
