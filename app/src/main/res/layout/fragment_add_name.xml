@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/edittext_background"
-    tools:context=".fragments.OnBoarding.AddNameFragment">
+    tools:context=".ui.fragments.OnBoarding.AddNameFragment">
 
     <include layout="@layout/appbar_signup_login" />
 
@@ -15,7 +15,7 @@
         android:layout_marginLeft="20dp"
         android:textColor="#000000"
         android:textSize="40dp"
-        android:fontFamily="sans-serif-medium"
+        android:fontFamily="@font/montserrat_bold"
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -49,6 +49,7 @@
                     android:inputType="text"
                     android:background="@drawable/edittext_background"
                     android:layout_width="match_parent"
+                    android:fontFamily="@font/montserrat_medium"
                     android:layout_height="wrap_content" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -75,6 +76,7 @@
                     android:inputType="text"
                     android:background="@drawable/edittext_background"
                     android:layout_width="match_parent"
+                    android:fontFamily="@font/montserrat_medium"
                     android:layout_height="wrap_content" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -89,7 +91,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="25dp"
             android:text="Continue"
-            android:fontFamily="sans-serif-black"
+            android:fontFamily="@font/montserrat_bold"
             />
 
     </LinearLayout>

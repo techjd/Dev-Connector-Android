@@ -3,39 +3,41 @@
     package="com.techjd.devconnector">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.DevConnector">
+        android:theme="@style/Theme.DevConnector"
+        android:usesCleartextTraffic="true">
         <activity
-            android:name=".activities.OnBoardingActivity"
+            android:name=".ui.activities.AddJobActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.OnBoardingActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
-            android:name=".SearchActivity"
+            android:name=".ui.activities.SearchActivity"
             android:exported="true" />
         <activity
-            android:name=".ProfileActivity"
+            android:name=".ui.activities.ProfileActivity"
             android:exported="true" />
         <activity
-            android:name=".AddPostActivity"
+            android:name=".ui.activities.AddPostActivity"
             android:exported="true" />
         <activity
-            android:name=".activities.MessagingActivity"
+            android:name=".ui.activities.MessagingActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.activities.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
     </application>

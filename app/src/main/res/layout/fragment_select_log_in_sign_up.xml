@@ -6,27 +6,27 @@
     android:layout_height="match_parent"
 
     android:background="@drawable/edittext_background"
-    tools:context=".fragments.OnBoarding.SelectLogInSignUpFragment">
+    tools:context=".ui.fragments.OnBoarding.SelectLogInSignUpFragment">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="60dp"
         android:src="@drawable/coding"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <ImageView
         android:id="@+id/title"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
-        android:text="@string/dev_connector"
+        android:src="@drawable/dev_connector"
         android:textColor="@color/black"
         android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,6 +40,7 @@
         android:id="@+id/signUp"
         android:layout_width="match_parent"
         android:textSize="25dp"
+        android:fontFamily="@font/montserrat_bold"
         android:layout_height="60dp"
         android:layout_marginTop="44dp"
         android:text="Join Now"
@@ -58,6 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="Sign In"
+        app:fontFamily="@font/montserrat_bold"
         android:fontFamily="sans-serif-medium"
         android:textColor="@color/purple_200"
         app:layout_constraintEnd_toEndOf="parent"

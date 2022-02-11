@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/edittext_background"
-    tools:context=".fragments.OnBoarding.SignInFragment">
+    tools:context=".ui.fragments.OnBoarding.SignInFragment">
 
     <include layout="@layout/appbar_signup_login" />
 
@@ -15,7 +15,7 @@
         android:layout_marginLeft="20dp"
         android:textColor="#000000"
         android:textSize="40dp"
-        android:fontFamily="sans-serif-medium"
+        android:fontFamily="@font/montserrat_bold"
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -48,6 +48,7 @@
                     android:id="@+id/userName"
                     android:background="@drawable/edittext_background"
                     android:layout_width="match_parent"
+                    android:fontFamily="@font/montserrat_medium"
                     android:layout_height="wrap_content" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -74,6 +75,7 @@
                     android:inputType="textPassword"
                     android:background="@drawable/edittext_background"
                     android:layout_width="match_parent"
+                    android:fontFamily="@font/montserrat_medium"
                     android:layout_height="wrap_content" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -85,11 +87,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="18dp"
-            android:text="Remember Me ?" />
+            android:text="Remember Me ?"
+            android:fontFamily="@font/montserrat_semibold"
+            />
 
         <TextView
             android:layout_marginTop="15dp"
-            android:fontFamily="sans-serif-black"
+            android:fontFamily="@font/montserrat_bold"
             android:textSize="18dp"
             android:textColor="#3F51B5"
             android:id="@+id/forgotPassword"
@@ -106,7 +110,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
             android:text="LOG IN"
-            android:fontFamily="sans-serif-black"
+            android:fontFamily="@font/montserrat_bold"
             />
 
         <ProgressBar

@@ -4,19 +4,11 @@
     android:layout_height="wrap_content">
 
     <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/topAppBar"
+        android:id="@+id/topAppBarDetailPost"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        app:menu="@menu/onboarding_top_app_bar_menu"
-        >
-
-        <ImageView
-            android:layout_width="200dp"
-            android:src="@drawable/dev_connector"
-            android:layout_height="wrap_content" >
-        </ImageView>
-
-
-    </com.google.android.material.appbar.MaterialToolbar>
+        app:navigationIcon="@drawable/ic_back"
+        android:background="@color/my_personal"
+        />
 
 </com.google.android.material.appbar.AppBarLayout>

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
 
     android:background="@drawable/edittext_background"
-    tools:context=".fragments.OnBoarding.SplashFragment">
+    tools:context=".ui.fragments.OnBoarding.SplashFragment">
 
     <ImageView
         android:id="@+id/imageView"
@@ -19,14 +19,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <ImageView
         android:id="@+id/title"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:layout_marginTop="32dp"
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
-        android:text="@string/dev_connector"
+        android:src="@drawable/dev_connector"
         android:textColor="@color/black"
         android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"

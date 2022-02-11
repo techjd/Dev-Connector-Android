@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/drawable/background_gradeint.xml" value="0.24114583333333334" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/drawable/chat_background_other.xml" value="0.1795" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/drawable/chat_background_ourself.xml" value="0.1795" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/drawable/dash.xml" value="0.1775" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/drawable/edittext_background.xml" value="0.24114583333333334" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/drawable/ic_add_post.xml" value="0.23646578140960164" />
@@ -11,40 +13,58 @@
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/drawable/ic_close.xml" value="0.23646578140960164" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/drawable/ic_message.xml" value="0.22135416666666666" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/drawable/ic_user.xml" value="0.24114583333333334" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/drawable/layout_comments.xml" value="0.178" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/drawable/message_edit_text_background.xml" value="0.2315" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/drawable/search_view_background.xml" value="0.22135416666666666" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/drawable/tab_colour.xml" value="0.23646578140960164" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout-land/activity_main.xml" value="0.18563922942206654" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/activity_add_job.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/activity_add_new_post.xml" value="0.176" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/activity_add_post.xml" value="0.16799999999999998" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/activity_login.xml" value="0.22083333333333333" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/activity_messaging.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/activity_messaging.xml" value="0.152" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/activity_on_boarding.xml" value="0.19814814814814816" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/activity_profile.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/activity_search.xml" value="0.11865942028985507" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/activity_select_role.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/activity_sign_up.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/add_job_toolbar.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/addpostfragmenttoolbar.xml" value="0.2" />
-        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/appbar_signup_login.xml" value="0.4" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/appbar_signup_login.xml" value="0.152" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/bottom_sheet_layout.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/detail_post_toolbar.xml" value="0.12638888888888888" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/fragment_add.xml" value="0.12092391304347826" />
-        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/fragment_add_email.xml" value="0.22083333333333333" />
-        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/fragment_add_name.xml" value="0.22083333333333333" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/fragment_add_email.xml" value="0.152" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/fragment_add_name.xml" value="0.176" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/fragment_add_post.xml" value="0.12092391304347826" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/fragment_connections.xml" value="0.12771739130434784" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/fragment_conversations.xml" value="0.14722222222222223" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/fragment_detail_post.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/fragment_home.xml" value="0.12771739130434784" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/fragment_jobs.xml" value="0.12771739130434784" />
-        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/fragment_message.xml" value="0.22083333333333333" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/fragment_message.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/fragment_notifications.xml" value="0.12771739130434784" />
-        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/fragment_select_log_in_sign_up.xml" value="0.25" />
-        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/fragment_set_password.xml" value="0.2" />
-        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/fragment_sign_in.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/fragment_online_users.xml" value="0.12916666666666668" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/fragment_post.xml" value="0.11180555555555556" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/fragment_select_log_in_sign_up.xml" value="0.136" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/fragment_set_password.xml" value="0.176" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/fragment_sign_in.xml" value="0.152" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/fragment_sign_up.xml" value="0.22083333333333333" />
-        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/fragment_splash.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/fragment_splash.xml" value="0.136" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/homefragmenttoolbar.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/layout_bottom_sheet.xml" value="0.176" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/layout_chat.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/layout_chat_other.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/layout_chat_ourself.xml" value="0.14722222222222223" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/layout_chats.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/layout_comments.xml" value="0.1453050034270048" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/layout_conversations.xml" value="0.2" />
-        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/layout_post.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/layout_online_user.xml" value="0.12916666666666668" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/layout_post.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/messagingtoolbar.xml" value="0.13949275362318841" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/online_messaging_toolbar.xml" value="0.1453050034270048" />
+        <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/online_users_toolbar.xml" value="0.12916666666666668" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/profiletoolbar.xml" value="0.10696266397578204" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/search.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/DevConnector/app/src/main/res/layout/searchtoolbar.xml" value="0.11865942028985507" />
