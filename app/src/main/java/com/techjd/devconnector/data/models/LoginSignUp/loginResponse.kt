@@ -1,5 +1,6 @@
 package com.techjd.devconnector.data.models.LoginSignUp
 
 data class loginResponse(
-    val token: String
+    val token: String,
+    val user: User
 )
