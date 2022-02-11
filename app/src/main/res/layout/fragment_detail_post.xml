@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/header"
+        android:orientation="vertical"
+        tools:context=".ui.fragments.FragmentDetailPost">
+
+        <include
+            android:id="@+id/topDetailPostAppBar"
+            layout="@layout/detail_post_toolbar" />
+
+        <include
+            android:id="@+id/singlePost"
+            layout="@layout/layout_post" />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/singlePostProgressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/header"
+        android:id="@+id/commentsTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="23dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/black"
+            android:text="Comments" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/commentsRecycerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/commentWritingArea"
+        android:layout_below="@id/commentsTitle"
+        tools:listitem="@layout/layout_comments" />
+
+    <LinearLayout
+
+        android:id="@+id/commentWritingArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <EditText
+            android:background="@drawable/message_edit_text_background"
+            android:id="@+id/edtTxtComment"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:fontFamily="@font/montserrat_medium"
+            android:textColor="@color/black"
+            android:padding="10dp"
+            android:textColorHint="@color/black"
+            android:hint="Write Your Opinion"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/postComment"
+            android:fontFamily="@font/montserrat_bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="POST" />
+    </LinearLayout>
+
+
+</RelativeLayout>
+
