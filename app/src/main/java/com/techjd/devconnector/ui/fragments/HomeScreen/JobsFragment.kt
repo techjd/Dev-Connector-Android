@@ -1,4 +1,4 @@
-package com.techjd.devconnector.fragments.HomeScreen
+package com.techjd.devconnector.ui.fragments.HomeScreen
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
