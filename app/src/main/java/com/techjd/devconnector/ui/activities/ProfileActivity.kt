@@ -1,8 +1,11 @@
 package com.techjd.devconnector.ui.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
@@ -25,6 +28,8 @@ class ProfileActivity : AppCompatActivity() {
     lateinit var userLocation: TextView
     lateinit var userOriginalBio: TextView
     lateinit var userImg: CircleImageView
+    lateinit var txtProfileNotCreated: TextView
+    lateinit var btnCreateProfile: Button
     val profileViewModel: ProfileViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +42,16 @@ class ProfileActivity : AppCompatActivity() {
         userImg = findViewById(R.id.userImg)
         userLocation = findViewById(R.id.userLocation)
         userOriginalBio = findViewById(R.id.userOriginalBio)
+
+        txtProfileNotCreated = findViewById(R.id.profileNotCreated)
+        btnCreateProfile = findViewById(R.id.createProfile)
+
+        btnCreateProfile.setOnClickListener {
+            Intent(this, CreateProfileActivity::class.java).apply {
+                startActivity(this)
+                overridePendingTransition(R.anim.slide_in_right, R.anim.no_animation)
+            }
+        }
 
         progressBar.visibility = View.VISIBLE
         dataStore = DataStore(this)
@@ -57,6 +72,10 @@ class ProfileActivity : AppCompatActivity() {
                     userLocation.text = userInfo.data.location
                     userOriginalBio.text = userInfo.data.bio
 
+                    txtProfileNotCreated.visibility = View.GONE
+                    btnCreateProfile.visibility = View.GONE
+
+                    Log.d("PROFILE ", "Whats Here SUCCESS ${userInfo.data}")
                     progressBar.visibility = View.INVISIBLE
                 }
                 Status.LOADING -> {
@@ -64,9 +83,13 @@ class ProfileActivity : AppCompatActivity() {
                 }
                 Status.ERROR -> {
                     progressBar.visibility = View.INVISIBLE
+                    txtProfileNotCreated.visibility = View.VISIBLE
+                    btnCreateProfile.visibility = View.VISIBLE
+                    Log.d("PROFILE ", "Whats Here ERROR ${userInfo.data}")
                 }
             }
         }
+
         topAppBar.setNavigationOnClickListener {
             onBackPressed()
         }
@@ -86,5 +109,12 @@ class ProfileActivity : AppCompatActivity() {
     override fun onBackPressed() {
         super.onBackPressed()
         overridePendingTransition(R.anim.no_animation, R.anim.slide_out_left)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        lifecycleScope.launch {
+            profileViewModel.getUserInfo(dataStore.getToken().first().toString())
+        }
     }
 }
