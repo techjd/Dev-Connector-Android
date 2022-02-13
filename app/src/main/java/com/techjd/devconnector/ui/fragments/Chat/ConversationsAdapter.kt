@@ -13,7 +13,7 @@ import de.hdodenhof.circleimageview.CircleImageView
 class ConversationsAdapter(
     val conversations: Conversations,
     val myUserId: String,
-    val onClickListener: (View, String) -> Unit
+    val onClickListener: (View, String, String) -> Unit
 ) :
     RecyclerView.Adapter<ConversationsAdapter.ConversationsViewHolder>() {
 
@@ -48,7 +48,7 @@ class ConversationsAdapter(
         holder.userName.text = userName
         holder.lastMessage.text = singleUser.lastMessage
         holder.cardView.setOnClickListener { view ->
-            onClickListener.invoke(view, idToSend!!)
+            onClickListener.invoke(view, idToSend!!, userName!!)
         }
     }
 

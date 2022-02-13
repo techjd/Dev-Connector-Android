@@ -82,10 +82,11 @@ class ConversationsFragment : Fragment() {
                 Status.SUCCESS -> {
                     conversationsRecyclerView.adapter = ConversationsAdapter(
                         conversations.data!!,
-                        onClickListener = { view, id ->
+                        onClickListener = { view, id, toName ->
                             val action =
                                 ConversationsFragmentDirections.actionConversationsFragmentToMessageFragment(
-                                    id
+                                    id,
+                                    toName
                                 )
                             findNavController().navigate(action)
 //                            makeToast(view, id)

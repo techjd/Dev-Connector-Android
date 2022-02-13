@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#F4F5F4"
 
-    tools:context=".ui.fragments.Chat.ConversationsFragment">
+    tools:context=".ui.fragments.Chat.MessageFragment">
 
     <include
         android:id="@+id/onlineMessageToolBar"
