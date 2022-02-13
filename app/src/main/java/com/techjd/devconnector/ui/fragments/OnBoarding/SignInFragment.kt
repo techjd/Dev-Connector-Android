@@ -96,10 +96,10 @@ class SignInFragment : Fragment() {
         }
 
         signIn.setOnClickListener {
-            if (emailTextInputLayout.text.toString() != "" && passwordTextInputLayout.text.toString() != "") {
+            if (emailTextInputLayout.text.toString().trim() != "" && passwordTextInputLayout.text.toString().trim() != "") {
                 signInViewModel.loginUser(
-                    emailTextInputLayout.text.toString(),
-                    passwordTextInputLayout.text.toString()
+                    emailTextInputLayout.text.toString().trim(),
+                    passwordTextInputLayout.text.toString().trim()
                 )
             } else {
                 Toast.makeText(context, "Please Fill All Fields", Toast.LENGTH_SHORT).show()
