@@ -21,6 +21,7 @@ import com.techjd.devconnector.viewmodels.ChatViewModel
 import io.socket.client.Socket
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 class OnlineUsersFragment : Fragment() {
     lateinit var topAppBar: MaterialToolbar
@@ -29,6 +30,7 @@ class OnlineUsersFragment : Fragment() {
     lateinit var onlineUsersRecyclerView: RecyclerView
     lateinit var noOnlineUsers: TextView
     lateinit var progressBar: ProgressBar
+    lateinit var myUserId: String
     private val chatViewModel: ChatViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,6 +58,10 @@ class OnlineUsersFragment : Fragment() {
             findNavController().popBackStack()
         }
 
+        runBlocking {
+            myUserId = mydataStore.getUserId().first()!!
+        }
+
         lifecycleScope.launch {
             chatViewModel.getAllOnlineUsers(mydataStore.getToken().first()!!)
         }
@@ -63,7 +69,19 @@ class OnlineUsersFragment : Fragment() {
         chatViewModel.onlineUsers.observe(viewLifecycleOwner) { onlineUsers ->
             when (onlineUsers.status) {
                 Status.SUCCESS -> {
-                    onlineUsersRecyclerView.adapter = OnlineUsersAdapter(onlineUsers.data!!)
+                    onlineUsersRecyclerView.adapter =
+                        OnlineUsersAdapter(
+                            onlineUsers.data!!,
+                            myUserId,
+                            onClickListener = { view, toid, toName ->
+                                val action =
+                                    OnlineUsersFragmentDirections.actionOnlineUsersFragmentToMessageFragment(
+                                        toid,
+                                        toName
+                                    )
+                                findNavController().navigate(action)
+                            }
+                        )
                     progressBar.visibility = View.GONE
                 }
                 Status.LOADING -> {
