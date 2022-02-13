@@ -57,8 +57,8 @@ class SetPasswordFragment : Fragment() {
         Log.d("EMAIL ", "onViewCreated: ${signUpViewModel.firstName.value}")
 
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
-            signUpViewModel.saveEmail(emailEdt.text.toString())
-            signUpViewModel.savePassword(passWordEdt.text.toString())
+            signUpViewModel.saveEmail(emailEdt.text.toString().trim())
+            signUpViewModel.savePassword(passWordEdt.text.toString().trim())
             findNavController().navigate(R.id.action_setPasswordFragment_to_addEmailFragment)
         }
 
@@ -97,8 +97,8 @@ class SetPasswordFragment : Fragment() {
         }
 
         btnAgreeAndJoin.setOnClickListener {
-            signUpViewModel.saveEmail(emailEdt.text.toString())
-            signUpViewModel.savePassword(passWordEdt.text.toString())
+            signUpViewModel.saveEmail(emailEdt.text.toString().trim())
+            signUpViewModel.savePassword(passWordEdt.text.toString().trim())
             lifecycleScope.launch {
                 signUpViewModel.registerUser()
             }
