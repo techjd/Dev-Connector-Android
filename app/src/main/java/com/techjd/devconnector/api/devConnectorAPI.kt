@@ -19,6 +19,14 @@ import com.techjd.devconnector.data.models.chat.online.Msg
 import com.techjd.devconnector.data.models.chat.onlineusers.OnlineUsers
 import com.techjd.devconnector.data.models.chat.sendMessages.SendMessageBody
 import com.techjd.devconnector.data.models.chat.sendMessages.SendMessageResponse
+import com.techjd.devconnector.data.models.jobs.alljobs.AllJobs
+import com.techjd.devconnector.data.models.jobs.JobBody
+import com.techjd.devconnector.data.models.jobs.JobPostedResponse
+import com.techjd.devconnector.data.models.jobs.singlejob.SingleJob
+import com.techjd.devconnector.data.models.profiles.Profile
+import com.techjd.devconnector.data.models.profiles.ProfileBody
+import com.techjd.devconnector.data.models.profiles.ProfileItem
+import com.techjd.devconnector.data.models.profiles.profileResponse.CreatedProfileResponse
 import retrofit2.Response
 import retrofit2.http.*
 
@@ -96,4 +104,36 @@ interface devConnectorAPI {
         @Body commentBody: CommentBody
     ): Response<UpdatesComments>
 
+    @POST("jobs")
+    suspend fun addANewJob(
+        @Header("x-auth-token") token: String,
+        @Body jobBody: JobBody
+    ): Response<JobPostedResponse>
+
+    @GET("jobs")
+    suspend fun getAllJobs(
+        @Header("x-auth-token") token: String
+    ): Response<AllJobs>
+
+    @GET("jobs/{id}")
+    suspend fun getASingleJob(
+        @Header("x-auth-token") token: String,
+        @Path("id") id: String
+    ): Response<SingleJob>
+
+    @PUT("jobs/{id}")
+    suspend fun updateASingleJob(
+        @Header("x-auth-token") token: String,
+        @Path("id") id: String,
+        @Body jobBody: JobBody
+    ): Response<Msg>
+
+    @GET("profile")
+    suspend fun getAllProfiles(): Response<Profile>
+
+    @POST("profile")
+    suspend fun createProfile(
+        @Header("x-auth-token") token: String,
+        @Body profileBody: ProfileBody
+    ): Response<CreatedProfileResponse>
 }
