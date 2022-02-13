@@ -1,6 +1,7 @@
 package com.techjd.devconnector.ui.fragments.Chat
 
 import android.os.Bundle
+import android.os.Message
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -21,6 +22,7 @@ import com.techjd.devconnector.R
 import com.techjd.devconnector.Utils.DataStore
 import com.techjd.devconnector.Utils.Status
 import com.techjd.devconnector.api.DevConnectorChat
+import com.techjd.devconnector.data.models.chat.messages.Messages
 import com.techjd.devconnector.data.models.chat.messages.MessagesItem
 import com.techjd.devconnector.data.models.chat.messages.UserId
 import com.techjd.devconnector.data.models.chat.newmessage.NewMessage
@@ -68,6 +70,9 @@ class MessageFragment : Fragment() {
         topAppBar.title = ""
         mSocket = DevConnectorChat.socket
 
+        val messages = Messages()
+
+        Log.d(TAG, "MSGS SIZE ${messages.size}")
 
         topAppBar.setNavigationOnClickListener {
             findNavController().popBackStack()
@@ -76,6 +81,11 @@ class MessageFragment : Fragment() {
         runBlocking {
             myUserId = mydataStore.getUserId().first()!!
         }
+
+        chatMessageAdapter = MessageAdapter(
+            messages,
+            myUserId
+        )
 
         lifecycleScope.launch {
             Log.d(TAG, "token ${mydataStore.getToken().first()!!} ${args.to}")
@@ -101,27 +111,37 @@ class MessageFragment : Fragment() {
             when (message.status) {
                 Status.SUCCESS -> {
                     val response = message.data!!.response
-                    chatMessageAdapter.addItem(
-                        MessagesItem(
-                            response.__v,
-                            response._id,
-                            response.body,
-                            response.conversation,
-                            response.createdAt,
-                            response.from,
-                            listOf(),
-                            response.to,
-                            listOf(),
-                            response.updatedAt
-                        )
-                    )
-                    lifecycleScope.launch {
-                        withContext(Dispatchers.Main) {
-                            chatMessageAdapter.notifyItemInserted(chatMessageAdapter.messages.size - 1)
-                            messagesRecyclerView.scrollToPosition(chatMessageAdapter.itemCount - 1)
+                    if (chatMessageAdapter.messages.size == 0) {
+                        lifecycleScope.launch {
+                            chatViewModel.getAllMessages(
+                                mydataStore.getToken().first()!!,
+                                UserId(args.to)
+                            )
                         }
+                        messageEditText.text.clear()
+                    } else{
+                        chatMessageAdapter.addItem(
+                            MessagesItem(
+                                response.__v,
+                                response._id,
+                                response.body,
+                                response.conversation,
+                                response.createdAt,
+                                response.from,
+                                listOf(),
+                                response.to,
+                                listOf(),
+                                response.updatedAt
+                            )
+                        )
+                        lifecycleScope.launch {
+                            withContext(Dispatchers.Main) {
+                                chatMessageAdapter.notifyItemInserted(chatMessageAdapter.messages.size - 1)
+                                messagesRecyclerView.scrollToPosition(chatMessageAdapter.itemCount - 1)
+                            }
+                        }
+                        messageEditText.text.clear()
                     }
-                    messageEditText.text.clear()
                 }
                 Status.ERROR -> {
 
@@ -137,32 +157,41 @@ class MessageFragment : Fragment() {
                 Log.d(TAG, "NEW MESSAGE ${(message[0].toString())}")
                 val message = gson.fromJson(message[0].toString(), NewMessage::class.java)
                 Log.d(TAG, "New Message ${message}")
-                chatMessageAdapter.addItem(
-                    MessagesItem(
-                        0,
-                        message._id,
-                        message.body,
-                        message.conversation,
-                        message.createdAt,
-                        message.from,
-                        emptyList(),
-                        message.to,
-                        emptyList(),
-                        message.updatedAt
-                    )
-                )
-                Log.d(
-                    TAG,
-                    "${chatMessageAdapter.messages.size - 1} pos ${chatMessageAdapter.itemCount - 1} met ${chatMessageAdapter.returnLastPosition()}"
-                )
-                lifecycleScope.launch {
-                    withContext(Dispatchers.Main) {
-                        chatMessageAdapter.notifyItemInserted(chatMessageAdapter.messages.size - 1)
-                        Log.d(
-                            TAG,
-                            "Whats last item HERE ${chatMessageAdapter.messages[chatMessageAdapter.messages.size - 1]}"
+                if (chatMessageAdapter.messages.size == 0) {
+                    lifecycleScope.launch {
+                        chatViewModel.getAllMessages(
+                            mydataStore.getToken().first()!!,
+                            UserId(args.to)
                         )
-                        messagesRecyclerView.scrollToPosition(chatMessageAdapter.itemCount - 1)
+                    }
+                } else {
+                    chatMessageAdapter.addItem(
+                        MessagesItem(
+                            0,
+                            message._id,
+                            message.body,
+                            message.conversation,
+                            message.createdAt,
+                            message.from,
+                            emptyList(),
+                            message.to,
+                            emptyList(),
+                            message.updatedAt
+                        )
+                    )
+                    Log.d(
+                        TAG,
+                        "${chatMessageAdapter.messages.size - 1} pos ${chatMessageAdapter.itemCount - 1} met ${chatMessageAdapter.returnLastPosition()}"
+                    )
+                    lifecycleScope.launch {
+                        withContext(Dispatchers.Main) {
+                            chatMessageAdapter.notifyItemInserted(chatMessageAdapter.messages.size - 1)
+                            Log.d(
+                                TAG,
+                                "Whats last item HERE ${chatMessageAdapter.messages[chatMessageAdapter.messages.size - 1]}"
+                            )
+                            messagesRecyclerView.scrollToPosition(chatMessageAdapter.itemCount - 1)
+                        }
                     }
                 }
             }
@@ -171,18 +200,22 @@ class MessageFragment : Fragment() {
                 when (messages.status) {
                     Status.SUCCESS -> {
                         Log.d(TAG, "onViewCreated: ${messages.data.toString()}")
-                        Log.d(TAG, " Whats ${messages.data?.get(0)!!.fromObj[0].name} ")
-                        if (messages.data[0].fromObj[0]._id != myUserId) {
-                            topAppBar.title = messages.data[0].fromObj[0].name
+//                        Log.d(TAG, " Whats ${messages.data?.get(0)!!.fromObj[0].name} ")
+                        if (messages.data!!.size == 0) {
+                            topAppBar.title = args.toName
                         } else {
-                            topAppBar.title = messages.data[0].toObj[0].name
+                            if (messages.data[0].fromObj[0]._id != myUserId) {
+                                topAppBar.title = messages.data[0].fromObj[0].name
+                            } else {
+                                topAppBar.title = messages.data[0].toObj[0].name
+                            }
+                            chatMessageAdapter = MessageAdapter(
+                                messages.data,
+                                myUserId
+                            )
+                            messagesRecyclerView.adapter = chatMessageAdapter
+                            messagesRecyclerView.scrollToPosition(messages.data.size - 1)
                         }
-                        chatMessageAdapter = MessageAdapter(
-                            messages.data,
-                            myUserId
-                        )
-                        messagesRecyclerView.adapter = chatMessageAdapter
-                        messagesRecyclerView.scrollToPosition(messages.data.size - 1)
                         progressBar.visibility = View.GONE
                     }
                     Status.ERROR -> {

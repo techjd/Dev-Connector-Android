@@ -10,7 +10,7 @@ import com.techjd.devconnector.R
 import com.techjd.devconnector.data.models.chat.messages.Messages
 import com.techjd.devconnector.data.models.chat.messages.MessagesItem
 
-class MessageAdapter(val messages: Messages, val myUserId: String) :
+class MessageAdapter(var messages: Messages, val myUserId: String) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     companion object {
@@ -61,6 +61,7 @@ class MessageAdapter(val messages: Messages, val myUserId: String) :
     fun returnLastPosition(): Int {
         return messages.size - 1
     }
+
 
     override fun getItemViewType(position: Int): Int {
         if (messages[position].from == myUserId) {
