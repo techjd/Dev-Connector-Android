@@ -9,7 +9,7 @@
         android:id="@+id/conversationsFragment"
         android:name="com.techjd.devconnector.ui.fragments.Chat.ConversationsFragment"
         android:label="fragment_conversations"
-        tools:layout="@layout/fragment_conversations" >
+        tools:layout="@layout/fragment_conversations">
         <action
             android:id="@+id/action_conversationsFragment_to_onlineUsersFragment"
             app:destination="@id/onlineUsersFragment" />
@@ -21,14 +21,23 @@
         android:id="@+id/onlineUsersFragment"
         android:name="com.techjd.devconnector.ui.fragments.Chat.OnlineUsersFragment"
         android:label="fragment_online_users"
-        tools:layout="@layout/fragment_online_users" />
+        tools:layout="@layout/fragment_online_users">
+        <action
+            android:id="@+id/action_onlineUsersFragment_to_messageFragment"
+            app:destination="@id/messageFragment"
+            app:popUpTo="@id/onlineUsersFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/messageFragment"
         android:name="com.techjd.devconnector.ui.fragments.Chat.MessageFragment"
         android:label="fragment_message"
-        tools:layout="@layout/fragment_message" >
+        tools:layout="@layout/fragment_message">
         <argument
             android:name="to"
+            app:argType="string" />
+        <argument
+            android:name="toName"
             app:argType="string" />
     </fragment>
 </navigation>

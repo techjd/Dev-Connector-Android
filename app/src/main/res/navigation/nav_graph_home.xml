@@ -18,7 +18,11 @@
         android:id="@+id/jobsFragment"
         android:name="com.techjd.devconnector.ui.fragments.HomeScreen.JobsFragment"
         android:label="fragment_jobs"
-        tools:layout="@layout/fragment_jobs" />
+        tools:layout="@layout/fragment_jobs" >
+        <action
+            android:id="@+id/action_jobsFragment_to_editJobActivity"
+            app:destination="@id/editJobActivity" />
+    </fragment>
     <fragment
         android:id="@+id/connectionsFragment"
         android:name="com.techjd.devconnector.ui.fragments.HomeScreen.ConnectionsFragment"
@@ -41,4 +45,18 @@
             android:id="@+id/action_fragment_detail_post_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
+    <activity
+        android:id="@+id/editJobActivity"
+        android:name="com.techjd.devconnector.ui.activities.EditJobActivity"
+        android:label="activity_edit_job"
+        tools:layout="@layout/activity_edit_job" >
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </activity>
+    <fragment
+        android:id="@+id/conversationsFragment"
+        android:name="com.techjd.devconnector.ui.fragments.Chat.ConversationsFragment"
+        android:label="fragment_conversations"
+        tools:layout="@layout/fragment_conversations" />
 </navigation>
