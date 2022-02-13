@@ -52,8 +52,8 @@ class AddNameFragment : Fragment() {
 
         btnContinue.setOnClickListener {
             signUpViewModel.saveFirstNameAndSecond(
-                firstName.text.toString(),
-                secondName.text.toString()
+                firstName.text.toString().trim(),
+                secondName.text.toString().trim()
             )
             findNavController().navigate(R.id.action_addNameFragment_to_addEmailFragment)
         }

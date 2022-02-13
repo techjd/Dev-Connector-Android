@@ -47,7 +47,7 @@ class AddEmailFragment : Fragment() {
         }
 
         btnPassword.setOnClickListener {
-            signUpViewModel.saveEmail(emailEdtText.text.toString())
+            signUpViewModel.saveEmail(emailEdtText.text.toString().trim())
             findNavController().navigate(R.id.action_addEmailFragment_to_setPasswordFragment)
         }
     }
